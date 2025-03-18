@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - InvestX</title>
+    <title>About InvestX</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
     <!-- Header -->
@@ -13,54 +14,36 @@
         <nav>
             <ul class="flex space-x-6">
                 <li><a href="index.html" class="text-gray-700 hover:text-blue-500">Home</a></li>
-                <li><a href="#" class="text-blue-500 font-bold">About</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-500">About</a></li>
                 <li><a href="#" class="text-gray-700 hover:text-blue-500">Services</a></li>
                 <li><a href="#" class="text-gray-700 hover:text-blue-500">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    <!-- About Us Section -->
-    <section class="py-16 px-6 text-center">
-        <h2 class="text-4xl font-bold text-gray-900">About InvestX</h2>
-        <p class="mt-4 text-lg text-gray-600">Empowering individuals with expert financial insights, smart investment strategies, and tax-saving solutions to build wealth and financial independence.</p>
-    </section>
-    
-    <!-- Mission & Values -->
-    <section class="py-10 px-6 bg-white shadow-md rounded-lg max-w-4xl mx-auto">
-        <h3 class="text-2xl font-bold text-gray-800">Our Mission</h3>
-        <p class="mt-4 text-gray-600">At InvestX, our mission is to provide reliable, high-quality financial knowledge—completely free—so that every Indian, from the middle class to high-net-worth individuals, can make informed decisions and maximize their financial potential.</p>
-    </section>
 
-    <section class="py-10 px-6 text-center">
-        <h3 class="text-2xl font-bold text-gray-800">Why Choose InvestX?</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-bold">Elite Financial Advice</h4>
-                <p class="text-gray-600 mt-2">Insights from top financial experts to maximize wealth.</p>
+    <!-- About Section -->
+    <section class="py-16 px-6 text-center opacity-0" id="about">
+        <h2 class="text-4xl font-bold text-blue-500 mb-6">About <span class="text-gray-900">InvestX</span></h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">InvestX is dedicated to providing expert financial advice, lucrative investment strategies, and effective tax-saving tips to help individuals and businesses grow their wealth.</p>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 bg-white rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-bold">Our Mission</h3>
+                <p class="text-gray-600 mt-2">To educate and empower people with top-tier financial knowledge.</p>
             </div>
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-bold">Tax-Saving Strategies</h4>
-                <p class="text-gray-600 mt-2">Smart tax planning tips to keep more of your money.</p>
-            </div>
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-bold">Investment Growth</h4>
-                <p class="text-gray-600 mt-2">High-return investment plans tailored for financial success.</p>
+            <div class="p-6 bg-white rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-bold">Why Choose Us?</h3>
+                <p class="text-gray-600 mt-2">We provide 100% free, reliable, and actionable financial guidance.</p>
             </div>
         </div>
     </section>
-    
-    <!-- Call to Action -->
-    <section class="text-center py-10">
-        <h3 class="text-2xl font-bold text-gray-900">Join InvestX Today</h3>
-        <p class="text-lg text-gray-600 mt-2">Start making smart financial decisions with expert insights and strategies.</p>
-        <a href="index.html" class="mt-4 inline-block bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:bg-blue-600">Explore More</a>
-    </section>
-    
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center py-6">
+    <footer class="bg-gray-900 text-white text-center py-6 mt-12">
         <p>&copy; 2025 InvestX. All rights reserved.</p>
     </footer>
+
+    <script>
+        gsap.to("#about", {opacity: 1, duration: 1, y: -20, ease: "power2.out"});
+    </script>
 </body>
 </html>
-
