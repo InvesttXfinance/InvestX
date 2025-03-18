@@ -6,6 +6,12 @@
     <title>About InvestX</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        .active {
+            font-weight: bold;
+            color: #2563EB; /* Blue color */
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
     <!-- Header -->
@@ -13,10 +19,11 @@
         <h1 class="text-2xl font-bold text-blue-600">InvestX</h1>
         <nav>
             <ul class="flex space-x-6">
-                <li><a href="index.html" class="text-gray-700 hover:text-blue-500">Home</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-500">About</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-500">Services</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-500">Contact</a></li>
+                <li><a href="index.html" class="text-gray-700 hover:text-blue-500">Dashboard</a></li>
+                <li><a href="home.html" class="text-gray-700 hover:text-blue-500">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html" class="text-gray-700 hover:text-blue-500">Services</a></li>
+                <li><a href="contact.html" class="text-gray-700 hover:text-blue-500">Contact</a></li>
             </ul>
         </nav>
     </header>
