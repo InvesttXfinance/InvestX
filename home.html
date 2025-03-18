@@ -3,58 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvestX - Home</title>
+    <title>InvestX - Elite Financial Advice</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
-        .animated-section {
-            animation: fadeInUp 1s ease-out;
+        .coin {
+            display: inline-block;
+            font-size: 30px;
+            animation: bounce 1s infinite;
+        }
+        .card {
+            background-color: white; /* Ensure consistent background */
+            opacity: 1; /* Ensure full visibility */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+        }
+        .card a {
+            color: inherit; /* Ensure uniform text color */
+            text-decoration: none; /* Remove underlines */
+        }
+        .card a:visited, .card a:focus, .card a:active {
+            color: inherit; /* Avoid color change on click */
+            outline: none; /* Remove focus outline */
         }
     </style>
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
     <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-        <h1 class="text-3xl font-bold text-blue-600">InvestX</h1>
+        <h1 class="text-2xl font-bold text-blue-600">InvestX</h1>
         <nav>
             <ul class="flex space-x-6">
                 <li><a href="#" class="text-gray-700 hover:text-blue-500">Home</a></li>
-                <li><a href="about.html" class="text-gray-700 hover:text-blue-500">About</a></li>
-                <li><a href="services.html" class="text-gray-700 hover:text-blue-500">Services</a></li>
-                <li><a href="contact.html" class="text-gray-700 hover:text-blue-500">Contact</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-500">About</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-500">Services</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-500">Contact</a></li>
             </ul>
         </nav>
     </header>
     
     <!-- Hero Section -->
-    <section class="text-center py-20 bg-blue-500 text-white animated-section">
-        <h2 class="text-5xl font-bold">Transform Your Financial Future</h2>
-        <p class="mt-4 text-lg">Expert strategies for young investors, businessmen, and tax-saving solutions.</p>
-        <a href="#investors" class="mt-6 inline-block bg-white text-blue-500 font-bold py-2 px-6 rounded-lg shadow-md hover:bg-gray-200">Get Started</a>
+    <section class="text-center py-20 bg-blue-500 text-white opacity-0" id="hero">
+        <h2 class="text-4xl font-bold">Your Trusted Financial Partner <span class="coin">💰</span></h2>
+        <p class="mt-4 text-lg">Expert investment strategies and tax-saving tips for financial growth.</p>
+        <a href="#" class="mt-6 inline-block bg-white text-blue-500 font-bold py-2 px-6 rounded-lg shadow-md hover:bg-gray-200">Get Started</a>
     </section>
     
-    <!-- Categories -->
-    <section class="py-16 px-6 text-center">
-        <h3 class="text-3xl font-bold text-gray-800">Choose Your Path</h3>
+    <!-- Features Section -->
+    <section class="py-16 px-6 text-center opacity-0" id="features">
+        <h3 class="text-2xl font-bold text-gray-800">Choose Your Path</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div class="p-6 bg-white rounded-lg shadow-md animated-section">
+            <div class="p-6 bg-white rounded-lg shadow-md card">
                 <h4 class="text-xl font-bold text-blue-600">Young Investors</h4>
                 <p class="text-gray-600 mt-2">Start early, build wealth, and secure your future.</p>
-                <a href="#young" class="text-blue-500 mt-4 inline-block">Learn More</a>
+                <a href="#" class="text-blue-500 font-bold">Learn More</a>
             </div>
-            <div class="p-6 bg-white rounded-lg shadow-md animated-section">
+            <div class="p-6 bg-white rounded-lg shadow-md card">
                 <h4 class="text-xl font-bold text-green-600">Business Investors</h4>
                 <p class="text-gray-600 mt-2">Maximize profits and invest strategically.</p>
-                <a href="#business" class="text-green-500 mt-4 inline-block">Explore Strategies</a>
+                <a href="#" class="text-green-500 font-bold">Explore Strategies</a>
             </div>
-            <div class="p-6 bg-white rounded-lg shadow-md animated-section">
+            <div class="p-6 bg-white rounded-lg shadow-md card">
                 <h4 class="text-xl font-bold text-red-600">Tax-Saving Solutions</h4>
                 <p class="text-gray-600 mt-2">Optimize your taxes and increase savings.</p>
-                <a href="#tax" class="text-red-500 mt-4 inline-block">Save More</a>
+                <a href="#" class="text-red-500 font-bold">Save More</a>
             </div>
         </div>
     </section>
@@ -65,7 +84,8 @@
     </footer>
 
     <script>
-        gsap.from(".animated-section", { opacity: 0, y: 30, duration: 1, stagger: 0.3, ease: "power2.out" });
+        gsap.to("#hero", {opacity: 1, duration: 1, y: -20, ease: "power2.out"});
+        gsap.to("#features", {opacity: 1, duration: 1, y: -20, ease: "power2.out", delay: 0.5});
     </script>
 </body>
 </html>
