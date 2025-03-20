@@ -8,25 +8,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         .highlight {
-            font-size: 2.5rem;
             font-weight: bold;
-            color: #2563EB;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.7; }
-            100% { opacity: 1; }
+            color: #2563EB; /* Blue color */
+            font-size: 2rem;
         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
     <!-- Header -->
     <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-        <h1 class="highlight">InvestX</h1>
+        <h1 class="text-3xl font-bold text-blue-600">InvestX</h1>
         <nav>
             <ul class="flex space-x-6">
-                <li><a href="index.html" class="text-gray-700 hover:text-blue-500">Dashboard</a></li>
+                <li><a href="index.html" class="active">Dashboard</a></li>
                 <li><a href="home.html" class="text-gray-700 hover:text-blue-500">Home</a></li>
                 <li><a href="about.html" class="text-gray-700 hover:text-blue-500">About</a></li>
                 <li><a href="services.html" class="text-gray-700 hover:text-blue-500">Services</a></li>
@@ -37,10 +31,12 @@
 
     <!-- Dashboard Section -->
     <section class="py-16 px-6 text-center opacity-0" id="dashboard">
-        <h2 class="text-4xl font-bold text-blue-500 mb-6">Welcome to <span class="highlight">InvestX</span></h2>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto">Your gateway to <strong>FREE</strong> expert financial advice, lucrative investment strategies, and effective tax-saving tips.</p>
+        <h2 class="text-4xl font-bold text-gray-900">Welcome to <span class="highlight">InvestX</span></h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto mt-4">Your gateway to <span class="font-bold text-blue-500">FREE</span> expert financial advice, investment strategies, and tax-saving tips.</p>
         
-        <button class="mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition" onclick="location.href='home.html'">Get Started for Free</button>
+        <div class="mt-10">
+            <a href="home.html" class="bg-blue-500 text-white px-8 py-3 rounded-lg text-lg font-bold hover:bg-blue-600 transition-transform transform hover:scale-105">Get Started - It's FREE!</a>
+        </div>
     </section>
 
     <!-- Footer -->
