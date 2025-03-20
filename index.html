@@ -3,69 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvestX - Elite Financial Advice</title>
+    <title>InvestX - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .highlight {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2563EB;
+            animation: pulse 1.5s infinite;
         }
-        .coin {
-            display: inline-block;
-            font-size: 30px;
-            animation: bounce 1s infinite;
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 text-gray-800">
     <!-- Header -->
     <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-blue-600">InvestX</h1>
+        <h1 class="highlight">InvestX</h1>
         <nav>
             <ul class="flex space-x-6">
+                <li><a href="index.html" class="text-gray-700 hover:text-blue-500">Dashboard</a></li>
                 <li><a href="home.html" class="text-gray-700 hover:text-blue-500">Home</a></li>
                 <li><a href="about.html" class="text-gray-700 hover:text-blue-500">About</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-500">Services</a></li>
+                <li><a href="services.html" class="text-gray-700 hover:text-blue-500">Services</a></li>
                 <li><a href="contact.html" class="text-gray-700 hover:text-blue-500">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    <!-- Hero Section -->
-    <section class="text-center py-20 bg-blue-500 text-white opacity-0" id="hero">
-        <h2 class="text-4xl font-bold">Your Trusted Financial Partner <span class="coin">💰</span></h2>
-        <p class="mt-4 text-lg">Expert investment strategies and tax-saving tips for financial growth.</p>
-        <a href="home.html" class="mt-6 inline-block bg-white text-blue-500 font-bold py-2 px-6 rounded-lg shadow-md hover:bg-gray-200">Get Started</a>
+
+    <!-- Dashboard Section -->
+    <section class="py-16 px-6 text-center opacity-0" id="dashboard">
+        <h2 class="text-4xl font-bold text-blue-500 mb-6">Welcome to <span class="highlight">InvestX</span></h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">Your gateway to <strong>FREE</strong> expert financial advice, lucrative investment strategies, and effective tax-saving tips.</p>
+        
+        <button class="mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition" onclick="location.href='home.html'">Get Started for Free</button>
     </section>
-    
-    <!-- Features Section -->
-    <section class="py-16 px-6 text-center opacity-0" id="features">
-        <h3 class="text-2xl font-bold text-gray-800">Why Choose InvestX?</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-bold">Elite Financial Advice</h4>
-                <p class="text-gray-600 mt-2">Insights from top financial experts to maximize your wealth.</p>
-            </div>
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-bold">Tax-Saving Strategies</h4>
-                <p class="text-gray-600 mt-2">Smart tax planning tips to keep more of your money.</p>
-            </div>
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-bold">Investment Growth</h4>
-                <p class="text-gray-600 mt-2">High-return investment plans tailored for you.</p>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center py-6">
+    <footer class="bg-gray-900 text-white text-center py-6 mt-12">
         <p>&copy; 2025 InvestX. All rights reserved.</p>
     </footer>
 
     <script>
-        gsap.to("#hero", {opacity: 1, duration: 1, y: -20, ease: "power2.out"});
-        gsap.to("#features", {opacity: 1, duration: 1, y: -20, ease: "power2.out", delay: 0.5});
+        gsap.to("#dashboard", {opacity: 1, duration: 1, y: -20, ease: "power2.out"});
     </script>
 </body>
 </html>
