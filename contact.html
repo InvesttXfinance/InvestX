@@ -7,14 +7,34 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"></script>
-    
-    <!-- Firebase Setup -->
-    <script type="module" src="firebase.js"></script>
+    <!-- Firebase SDK (Loaded as Modules) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+        // 🔹 Your Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA1dXbjib550e-AUMgEseWoUq8loCxn7jM",
+            authDomain: "investx-49ffd.firebaseapp.com",
+            projectId: "investx-49ffd",
+            storageBucket: "investx-49ffd.firebasestorage.app",
+            messagingSenderId: "589421389261",
+            appId: "1:589421389261:web:0c2896448f0cc446499084"
+        };
+
+        // 🔥 Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Attach Firebase to Window (For script.js usage)
+        window.db = db;
+
+        console.log("🔥 Firebase Initialized:", db); // Debugging
+    </script>
+
+    <!-- Script.js (Now Firebase is available globally) -->
     <script type="module" src="script.js"></script>
-    
+
     <style>
         .active {
             font-weight: bold;
