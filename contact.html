@@ -6,41 +6,18 @@
     <title>Contact InvestX</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    
-    <!-- Firebase SDK (Loaded as Modules) -->
-   <script type="module">
-    // ✅ Fix: Use correct import paths
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
-    
-    // 🔹 Your Firebase Configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyA1dXbjib550e-AUMgEseWoUq8loCxn7jM",
-        authDomain: "investx-49ffd.firebaseapp.com",
-        projectId: "investx-49ffd",
-        storageBucket: "investx-49ffd.appspot.com",
-        messagingSenderId: "589421389261",
-        appId: "1:589421389261:web:0c2896448f0cc446499084"
-    };
 
-    // 🔥 Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+    <!-- Favicon Fix -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    // ✅ Attach Firebase to Window (for use in script.js)
-    window.db = db;
-
-    console.log("🔥 Firebase Initialized:", db);
-</script>
-
-
-    <!-- Script.js (Now Firebase is available globally) -->
-    <script type="module" src="script.js" defer></script>
+    <!-- Firebase SDK (Separate File) -->
+    <script type="module" src="./firebase.js"></script>
+    <script type="module" src="./script.js"></script>
 
     <style>
         .active {
             font-weight: bold;
-            color: #2563EB; /* Blue color */
+            color: #2563EB;
         }
     </style>
 </head>
@@ -60,8 +37,10 @@
 
     <section class="py-16 px-6 text-center opacity-0" id="contact">
         <h2 class="text-4xl font-bold text-blue-500 mb-6">Contact <span class="text-gray-900">InvestX</span></h2>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto">We'd love to hear from you! Feel free to reach out with any questions, feedback, or business inquiries.</p>
-        
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+            We'd love to hear from you! Feel free to reach out with any questions, feedback, or business inquiries.
+        </p>
+
         <div class="mt-8 grid grid-cols-1 md:grid-cols-1 gap-6">
             <div class="p-6 bg-white rounded-lg shadow-md">
                 <h3 class="text-xl font-bold">Official Email</h3>
@@ -71,7 +50,9 @@
 
         <div class="mt-10 p-6 bg-white rounded-lg shadow-md max-w-lg mx-auto">
             <h3 class="text-xl font-bold mb-4">Suggest a Financial Topic</h3>
-            <p class="text-gray-600 mb-4">Your suggestions are extremely valuable to us! Let us know what financial topics you would like to learn about.</p>
+            <p class="text-gray-600 mb-4">
+                Your suggestions are extremely valuable to us! Let us know what financial topics you would like to learn about.
+            </p>
             <form id="suggestion-form">
                 <label class="block text-left text-gray-700 font-bold mb-2">Your Name</label>
                 <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg mb-4" placeholder="Enter your name" required>
@@ -82,8 +63,10 @@
                 <label class="block text-left text-gray-700 font-bold mb-2">Suggest a Topic</label>
                 <textarea id="topic" class="w-full px-4 py-2 border rounded-lg mb-4" placeholder="Enter a topic you want to learn about" rows="4" required></textarea>
                 
-                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-600">Submit</button>
-                <p id="success-message" class="text-green-600 mt-4 hidden">Your suggestion has been submitted successfully!</p>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-600">
+                    Submit
+                </button>
+                <p id="success-message" class="text-green-600 mt-4 hidden" style="display: none;"></p>
             </form>
         </div>
     </section>
@@ -93,7 +76,7 @@
     </footer>
 
     <script>
-        gsap.to("#contact", {opacity: 1, duration: 1, y: -20, ease: "power2.out"});
+        gsap.to("#contact", { opacity: 1, duration: 1, y: -20, ease: "power2.out" });
     </script>
 </body>
 </html>
